@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AxieGraphqlService } from 'src/axie-graphql/axie-graphql.service';
+import { AxieGraphqlService } from './axie-graphql/axie-graphql.service';
 import { ConfigModule } from '@nestjs/config';
 
 @Module({
@@ -12,7 +12,7 @@ import { ConfigModule } from '@nestjs/config';
                url: process.env.MONGODB_CONNECTION_STRING,
                useNewUrlParser: true,
                useUnifiedTopology: true,
-               ssl: true
+               keepConnectionAlive: true
              })],
   controllers: [AppController],
   providers: [AppService, AxieGraphqlService],
