@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Module, HttpModule } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -13,7 +13,7 @@ import { ConfigModule } from '@nestjs/config';
                useNewUrlParser: true,
                useUnifiedTopology: true,
                keepConnectionAlive: true
-             })],
+             }), HttpModule],
   controllers: [AppController],
   providers: [AppService, AxieGraphqlService],
 })

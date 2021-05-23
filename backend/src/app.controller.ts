@@ -8,6 +8,7 @@ export class AppController {
 
   @Get()
   getQuery(): string {
-    return this.AxieGraphqlService.getQuery()
+    this.AxieGraphqlService.searchMarketPlace();
+    return "OK"
   }
 }
