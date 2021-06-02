@@ -7,8 +7,7 @@ export class AppController {
   constructor(private readonly AxieGraphqlService: AxieGraphqlService) {}
 
   @Get()
-  getQuery(): string {
-    this.AxieGraphqlService.searchMarketPlace();
-    return "OK"
+  async getQuery(): Promise<string> {
+    return await this.AxieGraphqlService.getAllAxies();
   }
 }
